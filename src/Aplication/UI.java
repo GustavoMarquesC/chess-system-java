@@ -39,6 +39,9 @@ public class UI {
 		System.out.println();
 		System.out.println("Turn : " + chessMatch.getTurn());
 		System.out.println("Waiting player: " + chessMatch.getCurrentPlayer());
+		if (chessMatch.getCheck()) {
+			System.out.println("CHECK!");
+		}
 	}
 	
 	// https://stackoverflow.com/questions/2979383/java-clear-the-console
@@ -58,7 +61,7 @@ public class UI {
 			throw new InputMismatchException("Error reading ChessPosition. Valid values are from a1 to h8.");
 		}
 	}
-	
+
 	public static void printBoard(ChessPiece[][] pieces) {
 		for (int i=0; i<pieces.length; i++) {
 			System.out.print((8 - i) + " " );
